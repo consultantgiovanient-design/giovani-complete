@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Giovani Enterprises - Strategic Consulting, Risk Management, ISO Compliance, and Enterprise Solutions">
+    <meta name="keywords" content="consulting, risk management, ISO certification, enterprise suite">
+    <title>Giovani Enterprises - Strategic Consulting & Enterprise Solutions</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f5f7fa; color: #333; line-height: 1.6; }
+        .navbar { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 1rem 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .navbar-content { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
+        .navbar h1 { color: white; font-size: 1.3em; font-weight: 600; }
+        .navbar nav { display: flex; gap: 2rem; }
+        .navbar nav a { color: white; text-decoration: none; font-size: 0.95em; transition: opacity 0.3s ease; }
+        .navbar nav a:hover { opacity: 0.8; text-decoration: underline; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 60px 20px; text-align: center; }
+        .hero h1 { font-size: 2.5em; margin-bottom: 1rem; }
+        .hero p { font-size: 1.2em; margin-bottom: 2rem; opacity: 0.9; }
+        .hero-btn { display: inline-block; background: white; color: #667eea; padding: 12px 30px; border-radius: 5px; text-decoration: none; font-weight: 600; transition: transform 0.3s ease; }
+        .hero-btn:hover { transform: scale(1.05); }
+        .section { background: white; padding: 60px 20px; }
+        .section h2 { font-size: 2em; margin-bottom: 30px; color: #333; text-align: center; }
+        .section-content { max-width: 1200px; margin: 0 auto; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .service-card { background: #f9f9f9; padding: 30px; border-radius: 8px; border-left: 4px solid #667eea; }
+        .service-card h3 { font-size: 1.3em; margin-bottom: 15px; color: #667eea; }
+        .service-card p { color: #666; line-height: 1.8; }
+        .payment-section { background: white; padding: 40px 20px; margin: 40px 0; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .payment-title { font-size: 1.8em; margin-bottom: 30px; color: #333; text-align: center; }
+        .payment-methods { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; }
+        .payment-card { background: #f9f9f9; padding: 25px; border-radius: 8px; border: 2px solid #667eea; text-align: center; }
+        .payment-icon { font-size: 40px; margin-bottom: 15px; }
+        .payment-method-name { font-size: 1.1em; font-weight: 600; color: #333; margin-bottom: 10px; }
+        .payment-details { font-size: 0.9em; color: #666; line-height: 1.6; margin-bottom: 15px; }
+        .payment-btn { display: inline-block; background: #667eea; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: 600; }
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
+        .team-member { background: #f9f9f9; padding: 20px; border-radius: 8px; text-align: center; }
+        .team-avatar { width: 100px; height: 100px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 2em; font-weight: bold; }
+        .team-member h4 { font-size: 1.1em; margin-bottom: 5px; color: #333; }
+        .team-member .role { color: #667eea; font-weight: 600; margin-bottom: 10px; font-size: 0.9em; }
+        .team-member p { color: #666; font-size: 0.9em; line-height: 1.6; }
+        .team-section { margin-bottom: 50px; }
+        .team-section-title { font-size: 1.5em; color: #333; margin-bottom: 25px; padding-bottom: 10px; border-bottom: 2px solid #667eea; }
+        .stats { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 60px 20px; text-align: center; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto; }
+        .stat-item h3 { font-size: 2.2em; margin-bottom: 10px; }
+        .contact { background: #f9f9f9; padding: 60px 20px; text-align: center; }
+        .contact-content { max-width: 600px; margin: 0 auto; }
+        .contact-content p { font-size: 1.05em; margin-bottom: 30px; color: #666; }
+        .contact-btn { display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px 40px; border-radius: 5px; text-decoration: none; font-weight: 600; }
+        footer { background: #333; color: white; text-align: center; padding: 20px; font-size: 0.9em; }
+        footer a { color: #667eea; text-decoration: none; }
+        @media (max-width: 768px) { .navbar-content { flex-direction: column; gap: 10px; } .navbar nav { flex-direction: column; gap: 0.5rem; } .hero h1 { font-size: 1.8em; } .hero p { font-size: 1em; } }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-content">
+            <h1>🏢 Giovani Enterprises</h1>
+            <nav>
+                <a href="#services">Services</a>
+                <a href="#consultants">Team</a>
+                <a href="#payment">Payments</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <div class="container">
+            <h1>Strategic Consulting Services</h1>
+            <p>Delivering excellence in government, construction, finance, and training solutions</p>
+            <a href="#payment" class="hero-btn">Get Started</a>
+        </div>
+    </div>
+
+    <div class="section" id="services">
+        <div class="section-content">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card"><h3>🏛️ Government & Public Sector</h3><p>Policy development, institutional capacity building, regulatory frameworks, and e-government solutions for public institutions.</p></div>
+                <div class="service-card"><h3>🏗️ Construction & Real Estate</h3><p>Project management, site coordination, quality assurance, and comprehensive oversight for large-scale development projects.</p></div>
+                <div class="service-card"><h3>💰 Financial & SACCOs</h3><p>Banking solutions, cooperative development, risk management, and compliance frameworks for financial institutions.</p></div>
+                <div class="service-card"><h3>👥 Training & Development</h3><p>Leadership programs, digital transformation workshops, certification courses, and organizational capacity building.</p></div>
+                <div class="service-card"><h3>📋 Risk & ISO Management</h3><p>Risk assessment, ISO certification, compliance audits, and governance framework implementation.</p></div>
+                <div class="service-card"><h3>📊 Strategic Consulting</h3><p>Business strategy, organizational transformation, performance optimization, and market analysis.</p></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="payment-section" id="payment">
+        <h2 class="payment-title">Platform Payments & Subscriptions</h2>
+        <div class="payment-methods">
+            <div class="payment-card">
+                <div class="payment-icon">📱</div>
+                <div class="payment-method-name">M-Pesa</div>
+                <div class="payment-details">
+                    <p><strong>Fast & Secure</strong></p>
+                    <p>Business Number: 247247</p>
+                </div>
+                <a class="payment-btn" href="mailto:info@giovanienterprises.com?subject=M-Pesa%20Payment%20Request">Pay with M-Pesa</a>
+            </div>
+            <div class="payment-card">
+                <div class="payment-icon">🏦</div>
+                <div class="payment-method-name">Equity Bank</div>
+                <div class="payment-details">
+                    <p><strong>Bank Transfer</strong></p>
+                    <p>Paybill: 247247</p>
+                    <p>Account: 259356</p>
+                </div>
+                <a class="payment-btn" href="mailto:info@giovanienterprises.com?subject=Equity%20Bank%20Payment%20Request">Pay via Equity</a>
+            </div>
+            <div class="payment-card">
+                <div class="payment-icon">💳</div>
+                <div class="payment-method-name">Direct Bank Transfer</div>
+                <div class="payment-details">
+                    <p><strong>Wire Transfer</strong></p>
+                    <p>For banking details, email support</p>
+                </div>
+                <a class="payment-btn" href="mailto:info@giovanienterprises.com?subject=Bank%20Transfer%20Details">Get Bank Details</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="consultants">
+        <div class="section-content">
+            <h2>Our Expert Team</h2>
+            <div class="team-section">
+                <div class="team-section-title">Construction & QS Team</div>
+                <div class="team-grid">
+                    <div class="team-member"><div class="team-avatar">JO</div><h4>Jarred O.</h4><div class="role">Team Lead - Construction</div><p>10+ years in construction management and project oversight.</p></div>
+                    <div class="team-member"><div class="team-avatar">DK</div><h4>David K.</h4><div class="role">Team Lead - Quality Surveying</div><p>Expert in cost estimation, budgeting, and contract administration.</p></div>
+                    <div class="team-member"><div class="team-avatar">SC</div><h4>Seth C.</h4><div class="role">Team Lead - Site Management</div><p>Leads on-site coordination, resource planning, and quality assurance.</p></div>
+                </div>
+            </div>
+            <div class="team-section">
+                <div class="team-section-title">Risk & ISO Compliance Team</div>
+                <div class="team-grid">
+                    <div class="team-member"><div class="team-avatar">CA</div><h4>Cynthia A.</h4><div class="role">Risk Management Lead</div><p>Enterprise risk assessment and governance frameworks.</p></div>
+                    <div class="team-member"><div class="team-avatar">CS</div><h4>Catherine S.</h4><div class="role">ISO Certification Lead</div><p>ISO 9001 and ISO 45001 certification and compliance systems.</p></div>
+                    <div class="team-member"><div class="team-avatar">PH</div><h4>Prof. Hubert</h4><div class="role">Compliance & Standards Advisor</div><p>Academic expertise in standards and regulatory governance.</p></div>
+                </div>
+            </div>
+            <div class="team-section">
+                <div class="team-section-title">Training & Capability Development</div>
+                <div class="team-grid">
+                    <div class="team-member"><div class="team-avatar">AK</div><h4>Mr. Angelo Kehayas</h4><div class="role">Training Program Director</div><p>Develops adult learning programs and capacity-building initiatives.</p></div>
+                    <div class="team-member"><div class="team-avatar">PM</div><h4>Phelician M.</h4><div class="role">Capability Development Specialist</div><p>Designs competency growth plans and mentoring frameworks.</p></div>
+                    <div class="team-member"><div class="team-avatar">SO</div><h4>Dr. Sheila O.</h4><div class="role">Organizational Learning Lead</div><p>Leads learning sciences and professional development systems.</p></div>
+                    <div class="team-member"><div class="team-avatar">CO</div><h4>Christina O.</h4><div class="role">Performance & Coaching Specialist</div><p>Focuses on leadership coaching and organizational performance.</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="stats">
+        <div class="stats-grid">
+            <div class="stat-item"><h3>500+</h3><p>Projects Completed</p></div>
+            <div class="stat-item"><h3>5,000+</h3><p>Professionals Trained</p></div>
+            <div class="stat-item"><h3>KES 50B+</h3><p>Project Value Managed</p></div>
+            <div class="stat-item"><h3>20+</h3><p>Years Experience</p></div>
+        </div>
+    </div>
+
+    <div class="section contact" id="contact">
+        <div class="contact-content">
+            <h2>Ready to Work With Us?</h2>
+            <p>Contact our expert team to discuss how we can support your organization's strategic objectives and operational excellence.</p>
+            <a href="mailto:info@giovanienterprises.com" class="contact-btn">Get in Touch</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Giovani Enterprises. All rights reserved. | <a href="mailto:info@giovanienterprises.com">Contact Us</a></p>
+    </footer>
+</body>
+</html>
