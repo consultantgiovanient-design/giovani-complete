@@ -1,0 +1,56 @@
+title: Giovani Enterprises
+email: info@giovanienterprises.com
+description: Strategic consulting, risk management, ISO compliance, and enterprise growth solutions.
+baseurl: ""
+url: "https://consultantgiovanientprises.co.ke"
+locale: en_KE
+timezone: Africa/Nairobi
+
+markdown: kramdown
+permalink: pretty
+include:
+  - public
+exclude:
+  - node_modules
+  - vendor
+  - package.json
+  - package-lock.json
+  - README.md
+  - .gitignore
+  - Gemfile.lock
+  - .git
+  - .github
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate-v2
+
+pagination:
+  enabled: true
+  per_page: 10
+  permalink: /page/:num/
+  title: ':title - page :num'
+  sort_field: 'date'
+  sort_reverse: true
+
+liquid:
+  strict_filters: false
+  strict_variables: false
+
+lsi: false
+show_drafts: false
+future: false
+bench: false
+
+social:
+  name: Giovani Enterprises
+  links:
+    - https://www.facebook.com/giovanienterprises
+    - https://twitter.com/giovani_ent
+    - https://www.linkedin.com/company/giovani-enterprises
+
+sass:
+  sass_dir: _sass
+  style: compressed
